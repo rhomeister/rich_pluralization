@@ -73,7 +73,7 @@ module Rich
         Inflection = Struct.new(:rule, :replacement, :exceptions) do
 
           def self.build(*args)
-            self.new *(args.first.is_a?(Hash) ? args.first.values_at(*%w(rule replacement exceptions)) : args)
+            self.new *(args.first.is_a?(Hash) ? args.first.values_at(:rule, :replacement, :exceptions) : args)
           end
         
           def rule
